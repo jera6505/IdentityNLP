@@ -63,7 +63,9 @@ async def analyze(request):
     prediction = learn.predict(img)[0]
     message = generatequote()
 
-    return JSONResponse({'result': str(prediction) +'\n'+ str('Happy Birthday:') + str(message) })
+    return JSONResponse({'result': str(learn.predict(img)[0]) +'\n'+ str('Happy Birthday:') + str(message) })
+
+
 
 
 if __name__ == '__main__':
